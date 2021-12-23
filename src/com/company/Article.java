@@ -3,6 +3,8 @@ package com.company;
 import java.io.Serializable;
 
 public class Article implements Serializable {
+
+    private static final long serialVersionUID = 810939092043026342L;
     public int seq;
     public String writer;
     public String message;

@@ -38,13 +38,7 @@ public class Board {
 
     private static void prompt(Scanner s) throws FileNotFoundException, IOException {
 
-        System.out.println("순서\t글쓴이\t메시지");
-        System.out.println("-----------------------");
-
-        if(list.size() == 0) {
-            System.out.println("[아직 글이 없습니다.]");
-        }
-        list.forEach(System.out::println);
+        displayBoard();
 
         System.out.println(">> 입력을 원하면 w, 종료를 원하면 x를 입력해주세요.");
         String command = s.nextLine();
@@ -73,5 +67,15 @@ public class Board {
             System.exit(0);
         }
 
+    }
+
+    private static void displayBoard() {
+        System.out.println("순서\t글쓴이\t메시지");
+        System.out.println("-----------------------");
+
+        if(list.size() == 0) {
+            System.out.println("[아직 글이 없습니다.]");
+        }
+        list.forEach(System.out::println);
     }
 }

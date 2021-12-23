@@ -1,4 +1,7 @@
 package com.company;
 
-public class Article {
+import java.io.Serializable;
+
+public class Article implements Serializable {
+
 }

@@ -7,5 +7,5 @@
 ## 직렬화 기본 개념 정리
 https://sjparkk-dev1og.tistory.com/123
 ## 게시판 구현 내용 정리 (1)
-
+https://sjparkk-dev1og.tistory.com/124
 ## 게시판 구현 내용 정리 (2)

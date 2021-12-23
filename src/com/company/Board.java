@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Board {
 
@@ -19,6 +20,9 @@ public class Board {
             // 없다면 e 발생
             e.printStackTrace();
         }
+
+        //입력을 받음
+        Scanner s = new Scanner(System.in);
     }
 
     @SuppressWarnings("unchecked")

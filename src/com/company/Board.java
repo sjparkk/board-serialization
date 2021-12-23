@@ -43,30 +43,34 @@ public class Board {
         System.out.println(">> 입력을 원하면 w, 종료를 원하면 x를 입력해주세요.");
         String command = s.nextLine();
         if(command.equalsIgnoreCase("w")) {
-            System.out.print("작성자 이름을 입력해주세요.");
-            String writer = s.nextLine();
-
-            System.out.print("글 내용을 입력해주세요.");
-            String message = s.nextLine();
-
-            int seq = 0;
-            if(list.size() != 0) {
-                seq = list.get(list.size() - 1).seq + 1;
-            }
-
-            list.add(new Article(seq, writer, message));
-            System.out.println();
-
-            // 직렬화 출력하기: 글이 작성되었으면 메모리의 객체를 직렬화한 뒤
-            // 물리적인 파일로 하드디스크에 저장한다.
-            try(FileOutputStream fos = new FileOutputStream("board.txt");
-                ObjectOutputStream oos = new ObjectOutputStream(fos);) {
-                oos.writeObject(list);
-            }
+            write(s);
         } else if (command.equalsIgnoreCase("x")) {
             System.exit(0);
         }
 
+    }
+
+    private static void write(Scanner s) throws IOException {
+        System.out.print("작성자 이름을 입력해주세요.");
+        String writer = s.nextLine();
+
+        System.out.print("글 내용을 입력해주세요.");
+        String message = s.nextLine();
+
+        int seq = 0;
+        if(list.size() != 0) {
+            seq = list.get(list.size() - 1).seq + 1;
+        }
+
+        list.add(new Article(seq, writer, message));
+        System.out.println();
+
+        // 직렬화 출력하기: 글이 작성되었으면 메모리의 객체를 직렬화한 뒤
+        // 물리적인 파일로 하드디스크에 저장한다.
+        try(FileOutputStream fos = new FileOutputStream("board.txt");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);) {
+            oos.writeObject(list);
+        }
     }
 
     private static void displayBoard() {

@@ -65,6 +65,10 @@ public class Board {
         list.add(new Article(seq, writer, message));
         System.out.println();
 
+        saveToFile();
+    }
+
+    private static void saveToFile() throws IOException {
         // 직렬화 출력하기: 글이 작성되었으면 메모리의 객체를 직렬화한 뒤
         // 물리적인 파일로 하드디스크에 저장한다.
         try(FileOutputStream fos = new FileOutputStream("board.txt");

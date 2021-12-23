@@ -7,7 +7,7 @@ public class Article implements Serializable {
     private static final long serialVersionUID = 810939092043026342L;
     public int seq;
     public String writer;
-    public String message;
+    public transient String message;
 
     public Article(int seq, String writer, String message) {
         this.seq = seq;
